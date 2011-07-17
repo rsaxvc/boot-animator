@@ -1,0 +1,2 @@
+Currently: ./a.out video.videoextension will generate a bootanimation.zip ready for android.
+I intend to add framerate and frameskip as soon as I learn libpopt.
