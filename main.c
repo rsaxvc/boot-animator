@@ -47,8 +47,8 @@ static void write_desc(int width, int height, float fps, int loop, char * fname,
 int main( int num_args, const char * const args[] )
 {
     IplImage  * frame;
-    int       	key;
-    char 		fname_buf[200];
+    int         key;
+    char        fname_buf[200];
 
     int width;
     int height;
@@ -68,17 +68,17 @@ int main( int num_args, const char * const args[] )
 
     /* always check */
     if( !capture )
-    	{
-    	printf("Couldn't open %s", args[1]);
-    	return 3;
-    	}
+        {
+        printf("Couldn't open %s", args[1]);
+        return 3;
+        }
 
     width     	= cvGetCaptureProperty( capture, CV_CAP_PROP_FRAME_WIDTH );
-    height 		= cvGetCaptureProperty( capture, CV_CAP_PROP_FRAME_HEIGHT );
-    framerate 	= cvGetCaptureProperty( capture, CV_CAP_PROP_FPS );
+    height      = cvGetCaptureProperty( capture, CV_CAP_PROP_FRAME_HEIGHT );
+    framerate   = cvGetCaptureProperty( capture, CV_CAP_PROP_FPS );
     frameskip   = 1;
     frameseek   = 0;
-    loop		= 1;
+    loop        = 1;
 
     //Do arg parsing here
 
@@ -94,10 +94,10 @@ int main( int num_args, const char * const args[] )
 
     while( key != 'q' ) {
         /* get a frame */
-		snprintf(fname_buf, sizeof( fname_buf ), "part0/boot_%05i.png", frame_idx++ );
-    	frame = cvQueryFrame( capture );
-    	if( !frame )
-		    {
+        snprintf(fname_buf, sizeof( fname_buf ), "part0/boot_%05i.png", frame_idx++ );
+        frame = cvQueryFrame( capture );
+        if( !frame )
+            {
             //ran off end of video
             break;
             }
