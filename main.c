@@ -126,7 +126,7 @@ if( fptr == NULL )
     printf("Couldn't open %s", fname );
     exit(4);
     }
-fprintf(fptr, "%i %i %f\r\n", width, height, fps);
+fprintf(fptr, "%i %i %i\r\n", width, height, (int)fps);
 fprintf(fptr, "p %i 0 %s\r\n", loop!=0, name );
 fclose( fptr );
 }
