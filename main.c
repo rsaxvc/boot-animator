@@ -97,22 +97,21 @@ int main( int num_args, const char * const args[] )
 		snprintf(fname_buf, sizeof( fname_buf ), "part0/boot_%05i.png", frame_idx++ );
     	frame = cvQueryFrame( capture );
     	if( !frame )
-			{
-    		//ran off end of video
-    		break;
-			}
+		    {
+            //ran off end of video
+            break;
+            }
         if(!cvSaveImage( fname_buf, frame, 0 ) )
-        	{
-        	printf("Could not save: %s\n",fname_buf);
-        	exit(2);
-        	}
+            {
+            printf("Could not save: %s\n",fname_buf);
+            exit(2);
+            }
     }
 
     /* free memory */
     cvReleaseCapture( &capture );
 
     system("zip -rv -Z store bootanimation.zip desc.txt part0");
-
     return 0;
 }
 
@@ -123,10 +122,10 @@ FILE * fptr;
 fptr = fopen(fname, "w+");
 
 if( fptr == NULL )
-	{
-	printf("Couldn't open %s", fname );
-	exit(4);
-	}
+    {
+    printf("Couldn't open %s", fname );
+    exit(4);
+    }
 fprintf(fptr, "%i %i %f\r\n", width, height, fps);
 fprintf(fptr, "p %i 0 %s\r\n", loop!=0, name );
 fclose( fptr );
