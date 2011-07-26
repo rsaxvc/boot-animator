@@ -1,2 +1,3 @@
-Currently: ./a.out video.videoextension will generate a bootanimation.zip ready for android.
-I intend to add framerate and frameskip as soon as I learn libpopt.
+1) Install dependencies: libpopt-dev, libhighgui-dev, libcv-dev
+2) run `make`
+3) run `./boot-animator` to learn how to use the tool

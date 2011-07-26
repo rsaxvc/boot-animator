@@ -84,13 +84,6 @@ int main( int num_args, const char * const args[] )
         goto free_and_quit;
         }
 
-    printf("inputstr:%s\n",input_string);
-    printf("outptstr:%s\n",output_string);
-    printf("num_frames:%i\n",num_frames);
-    printf("loop:%i\n",loop);
-    printf("framerate:%i\n",framerate);
-    printf("frameskip:%i\n",frameskip);
-    printf("frameseek:%i\n",frameseek);
     printf("width:%i\n",width);
     printf("height:%i\n",height);
 
