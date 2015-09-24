@@ -182,10 +182,20 @@ int main( int num_args, const char * args[] )
     /* free memory */
     cvReleaseCapture( &capture );
 
+    if( strpbrk( output_string, "\"';`") )
+        {
+        printf("invalid filename\n");
+        exit(6);
+        }
+
     char sysbuf[1024];
-    strcpy( sysbuf, "zip -rv -Z store " );
-    strcat( sysbuf, output_string );
-    strcat( sysbuf, " desc.txt part0" );
+    sysbuf[sizeof(sysbuf)-2] = 0;
+    snprintf( sysbuf, sizeof( sysbuf ), "zip -rv -Z store %s desc.txt part0", output_string );
+    if( sysbuf[sizeof(sysbuf)-2] )
+        {
+        printf("internal buffer out of space\n");
+        exit(5);
+        }
     system( sysbuf );
 
 free_and_quit:
