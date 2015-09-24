@@ -60,7 +60,7 @@ POPT_TABLEEND
 
 static void write_desc(int width, int height, float fps, int loop, char * fname, char * name );
 
-int main( int num_args, const char * const args[] )
+int main( int num_args, const char * args[] )
 {
     IplImage  * frame;
     char        fname_buf[200];
